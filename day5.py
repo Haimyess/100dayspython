@@ -1,39 +1,39 @@
 import random
 
 
-# fruits = ["Strawberry", "Banana", "Dates"]
+fruits = ["Strawberry", "Banana", "Dates"]
 
-# for fruit in fruits:
-#     print(fruit)
+for fruit in fruits:
+    print(fruit)
 
 
-# bills = [10,25,32,46]
-# total_bills = sum(bills)
-# print(total_bills)
+bills = [10,25,32,46]
+total_bills = sum(bills)
+print(total_bills)
 
 
 # ---------------------------------------------------
 # --------------------Highest score------------------
 # ---------------------------------------------------
 
-# student_scores = [150, 142, 185, 120, 171, 184, 149, 24, 59, 68, 199, 78, 65, 89, 86, 55, 91, 64, 89]
-# print("with the built in function", max(student_scores))
+student_scores = [150, 142, 185, 120, 171, 184, 149, 24, 59, 68, 199, 78, 65, 89, 86, 55, 91, 64, 89]
+print("with the built in function", max(student_scores))
 
-# highest_score = 0
-# current_score = 0
+highest_score = 0
+current_score = 0
 
-# for score in student_scores:
-#         if(highest_score < score):
-#             highest_score = score   
+for score in student_scores:
+        if(highest_score < score):
+            highest_score = score   
 
 
-# print("With my code", highest_score)             
+print("With my code", highest_score)             
 
-# total = 0
-# for number in range(1, 101):
-#       total += number
+total = 0
+for number in range(1, 101):
+      total += number
 
-# print(total)
+print(total)
 
 
 
@@ -42,15 +42,15 @@ import random
 # ---------------------------------------------------
 
 
-# fizzbuzz_list = []
+fizzbuzz_list = []
 
-# for item in range(1, 101):
-#     if item % 5 == 0 and item % 3 == 0: fizzbuzz_list.append("FizzBuzz")
-#     elif item % 3 == 0: fizzbuzz_list.append("Fizz")
-#     elif item % 5 == 0: fizzbuzz_list.append("Buzz")
-#     else: fizzbuzz_list.append(item)  
+for item in range(1, 101):
+    if item % 5 == 0 and item % 3 == 0: fizzbuzz_list.append("FizzBuzz")
+    elif item % 3 == 0: fizzbuzz_list.append("Fizz")
+    elif item % 5 == 0: fizzbuzz_list.append("Buzz")
+    else: fizzbuzz_list.append(item)  
 
-# print(fizzbuzz_list)          
+print(fizzbuzz_list)          
 
 
 
@@ -91,13 +91,17 @@ for letter in range(1, nr_letters + 1):
     random_letter = random.choice(letters)
     random_pass.append(random_letter)
 
+random.shuffle(random_pass)
+final_pass = "".join(random_pass)
+
+
 
 # Each time get a difrent number 
 # Add them to a string 
 # 
 
 
-
 print(f"Your new password is {random_pass}")
+print("Joined", final_pass)
 
 
