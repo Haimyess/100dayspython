@@ -76,11 +76,12 @@ while lifes > 0 and "_" in display_word:
         lifes -= 1 
         print('Remaining lifes', lifes)
 
+    if letter_provided in display_word: print('You have already guessed this letter ')
 
     if "_" not in display_word: 
         print("Congrats!!! You won!!")
         print(final_word)
-    if lifes == 0:   print("Game Over") 
+    if lifes == 0:   print(f"Game Over, the word was {random_word}, Better luck next time!!") 
                  
 
 
