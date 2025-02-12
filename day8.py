@@ -86,18 +86,18 @@
 
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
-direction = input("type 'encode' to encrypt and 'decode' to decrypt\n").lower()
-text = input("Type your message\n").lower()
-shift = int(input("Type the shift number\n"))
+continue_quest = True
 
-
+# decipher function
 def encrypt(msg, number_positions, mode ):
     
       encoded_msg = ""
       
       for letter in msg:
 
-        index_alph = alphabet.index(letter) + number_positions if mode  == 'encode' else alphabet.index(letter) - number_positions
+        if letter not in alphabet : encoded_msg += letter
+        else : 
+         index_alph =  alphabet.index(letter) + number_positions if mode  == 'encode' else alphabet.index(letter) - number_positions
       
         # if mode  == 'encode' :
         #     index_alph = alphabet.index(letter) + number_positions
@@ -105,18 +105,36 @@ def encrypt(msg, number_positions, mode ):
         #     index_alph = alphabet.index(letter) - number_positions
            
         
-        final_letter = alphabet[index_alph % len(alphabet)]
-         
-        encoded_msg += final_letter
+         final_letter = alphabet[index_alph % len(alphabet)]
+            
+         encoded_msg += final_letter
   
   
       return encoded_msg
                   
- 
+
+
+while  continue_quest:
+  direction = input("type 'encode' to encrypt and 'decode' to decrypt\n").lower()
+  text = input("Type your message\n").lower()
+  shift = int(input("Type the shift number\n"))
+
+  msg = encrypt(text, shift, direction)  
+
+  print(f"You {direction}d message is", msg)
                   
-                
+  restart = input("Do you want to continue?\n").lower()
+
+ 
 
 
-msg = encrypt(text, shift, direction)  
+  if restart == "no" :
+    continue_quest = False
+    print("Have a good one!")
+  
+  
 
-print(msg)
+
+
+
+# ask for question
