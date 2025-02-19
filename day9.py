@@ -72,43 +72,43 @@ import os
 # -----------------------------------------
 
 
-bid_people = {}
-is_more_people = True
+# bid_people = {}
+# is_more_people = True
 
 
-def add_auction(person, amount) :
-    bid_people[person] = amount
+# def add_auction(person, amount) :
+#     bid_people[person] = amount
   
 
 
-def check_highest_bid(auctionaires) :
-    max_bid = 0
-    max_bidder_name = ""
-    for person, bid in auctionaires.items() :
-        # print(person, bid)
-        if int(bid) > max_bid :
-            max_bidder_name = person
-            max_bid = bid
+# def check_highest_bid(auctionaires) :
+#     max_bid = 0
+#     max_bidder_name = ""
+#     for person, bid in auctionaires.items() :
+#         # print(person, bid)
+#         if int(bid) > max_bid :
+#             max_bidder_name = person
+#             max_bid = bid
         
-    print(f"The highest bidder was {max_bidder_name} with a bid of {max_bid}")
+#     print(f"The highest bidder was {max_bidder_name} with a bid of {max_bid}")
         # max_bidder.append(bid_people[max_bidder_name]) 
 
 
-while is_more_people :
+# while is_more_people :
 
-    print("Welcome to the Auction!")
-    auctionare_name = input("Whats your name?\n")
-    bid_amount = int(input("whats your bid?\n"))
-    add_auction(auctionare_name, bid_amount)
-    are_more_bidders = input("Is there any more auctionares?\n")
+#     print("Welcome to the Auction!")
+#     auctionare_name = input("Whats your name?\n")
+#     bid_amount = int(input("whats your bid?\n"))
+#     add_auction(auctionare_name, bid_amount)
+#     are_more_bidders = input("Is there any more auctionares?\n")
 
-    if are_more_bidders == "no":
-        is_more_people = False
+#     if are_more_bidders == "no":
+#         is_more_people = False
 
-    os.system('cls')
+#     os.system('cls')
 
 
-check_highest_bid(bid_people)
+# check_highest_bid(bid_people)
 
 # print(bid_people)
 
@@ -127,3 +127,20 @@ check_highest_bid(bid_people)
 # check the highest bid
 # show result 
 
+
+def is_leap_year(year):
+    # Write your code here. 
+    # Don't change the function name.
+    if year % 4  == 0:
+        if year % 100 == 0 : 
+            if year % 400 == 0 :
+                return  "Leap year "
+            else :  return "Normal"      
+        return "Normal"   
+ 
+            
+
+            
+
+leap_result = is_leap_year(2100)            
+print(leap_result)
